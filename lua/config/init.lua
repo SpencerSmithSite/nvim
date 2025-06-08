@@ -12,7 +12,7 @@ vim.opt.incsearch = true
 vim.opt.startofline = true
 
 -- Turn off line wrap
-vim.opt.wrap = false
+vim.opt.wrap = false 
 vim.opt.colorcolumn = "79"
 
 -- Keep extra lines when scrolling
@@ -25,6 +25,14 @@ vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+
+-- Format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    vim.lsp.buf.format({ async = true })
+  end,
+})
 
 -- File handling
 vim.cmd("filetype plugin indent on")
