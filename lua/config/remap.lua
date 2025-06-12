@@ -1,8 +1,49 @@
 -- Set space as the leader key
 vim.g.mapleader = " "
 
+-- Harpoon Basic keymaps
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Harpoon add file" })
+vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon toggle menu" })
+
+-- Fugitive keybinds
+-- Git status
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git status' })
+-- Git blame
+vim.keymap.set('n', '<leader>gb', ':Git blame<CR>', { desc = 'Git blame' })
+-- Git diff
+vim.keymap.set('n', '<leader>gd', ':Gdiffsplit<CR>', { desc = 'Git diff split' })
+-- Git log
+vim.keymap.set('n', '<leader>gl', ':Git log<CR>', { desc = 'Git log' })
+-- Git push
+vim.keymap.set('n', '<leader>gp', ':Git push<CR>', { desc = 'Git push' })
+-- Git pull
+vim.keymap.set('n', '<leader>gP', ':Git pull<CR>', { desc = 'Git pull' })
+-- Git commit
+vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', { desc = 'Git commit' })
+-- Git add current file
+vim.keymap.set('n', '<leader>ga', ':Git add %<CR>', { desc = 'Git add current file' })
+-- Git add all
+vim.keymap.set('n', '<leader>gA', ':Git add .<CR>', { desc = 'Git add all' })
+-- Git checkout
+vim.keymap.set('n', '<leader>go', ':Git checkout ', { desc = 'Git checkout' })
+-- Git branch
+vim.keymap.set('n', '<leader>gB', ':Git branch<CR>', { desc = 'Git branch' })
+ 
+-- Harpoon Navigate to files
+vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end, { desc = "Harpoon file 1" })
+vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end, { desc = "Harpoon file 2" })
+vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end, { desc = "Harpoon file 3" })
+vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end, { desc = "Harpoon file 4" })
+
+-- Harpoon Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<C-k>", function() harpoon:list():prev() end, { desc = "Harpoon previous" })
+vim.keymap.set("n", "<C-j>", function() harpoon:list():next() end, { desc = "Harpoon next" })
+ 
 -- Open file explorer with <leader>pv Keys: Space + p + v
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- open neotree with <leader>e Keys: Space + e
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', {})
 
 -- Move selected lines up and down in visual mode while maintaining selection
 -- and indentation Keys: J (while in visual mode)
