@@ -1,6 +1,9 @@
 -- Set space as the leader key
 vim.g.mapleader = " "
 
+--diagnostic keybinds
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+
 -- Harpoon Basic keymaps
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Harpoon add file" })
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon toggle menu" })

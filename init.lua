@@ -1,3 +1,5 @@
 require("config")
 require("config.lazy")
+require("config.remap")
+require("config.lsp")
 require("lazy").setup("plugins")

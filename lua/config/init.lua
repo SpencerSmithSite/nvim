@@ -8,11 +8,21 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- Diagnostics options
+vim.diagnostic.config({
+    --    virtual_lines = {
+    --    current_line = true
+    --    },
+    virtual_text = true,
+    underline = true
+    --},
+})
+
 -- Cursor behavior
 vim.opt.startofline = true
 
 -- Turn off line wrap
-vim.opt.wrap = false 
+vim.opt.wrap = false
 vim.opt.colorcolumn = "79"
 
 -- Keep extra lines when scrolling
@@ -28,10 +38,10 @@ vim.opt.smartindent = true
 
 -- Format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function()
-    vim.lsp.buf.format({ async = true })
-  end,
+    pattern = "*",
+    callback = function()
+        vim.lsp.buf.format({ async = true })
+    end,
 })
 
 -- File handling

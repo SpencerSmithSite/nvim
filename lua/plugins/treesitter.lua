@@ -6,9 +6,12 @@ return {
     config = function()
         require 'nvim-treesitter.configs'.setup {
             -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-            ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline",
-                "javascript", "typescript", "python", "dart", "c_sharp", "cpp", "css", "rust", "csv", "dockerfile", "elixir", "git_config",
-                "git_rebase", "gitattributes", "gitcommit", "gitignore", "go", "html", "http", "java", "json", "objc", "php", "sql", "swift" },
+            ensure_installed = { "c", "go", "lua", "vim", "vimdoc", "query",
+                "markdown", "markdown_inline", "javascript", "typescript",
+                "python", "dart", "c_sharp", "cpp", "css", "rust", "csv",
+                "dockerfile", "elixir", "git_config", "git_rebase",
+                "gitattributes", "gitcommit", "gitignore", "go", "html",
+                "http", "java", "json", "objc", "php", "sql", "swift" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
@@ -23,7 +26,7 @@ return {
             ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
             -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
-            indent = { enable = true},
+            indent = { enable = true },
             highlight = {
                 enable = true,
 
