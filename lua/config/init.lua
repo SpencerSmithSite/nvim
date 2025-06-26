@@ -47,9 +47,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- File handling
 vim.cmd("filetype plugin indent on")
 
--- Set colorscheme
-vim.cmd.colorscheme("greyish-blue-with-orange")
-
 -- Transparency settings
 local function set_transparent_bg()
     local highlights = {

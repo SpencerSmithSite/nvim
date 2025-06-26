@@ -3,8 +3,7 @@
 --- https://github.com/swiftlang/sourcekit-lsp
 ---
 --- Language server for Swift and C/C++/Objective-C.
-
-local util = require 'lspconfig.util'
+--local util = require 'lspconfig.util'
 
 return {
     cmd = { 'sourcekit-lsp' },
